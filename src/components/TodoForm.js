@@ -10,7 +10,6 @@ const TodoForm = ({ addTodo }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(todo.length);
         if (todo.task.trim()) {
             addTodo({ ...todo, id: uuid() });
             setTodo({ ...todo, task: '' });
