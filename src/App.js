@@ -1,24 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 function App() {
     const [todos, setTodos] = useState([]);
-
-    const LOCAL_STORAGE_KEY = 'react-todo-list-todos';
-
-    useEffect(() => {
-        const storageTodos = JSON.parse(
-            localStorage.getItem(LOCAL_STORAGE_KEY)
-        );
-
-        storageTodos.length !== 0 && setTodos(storageTodos);
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-    }, [todos]);
 
     const addTodo = (todo) => {
         if (todos.length < 10) {
