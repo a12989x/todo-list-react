@@ -13,7 +13,7 @@ function App() {
             localStorage.getItem(LOCAL_STORAGE_KEY)
         );
 
-        storageTodos.length && setTodos(storageTodos);
+        storageTodos.length !== 0 && setTodos(storageTodos);
     }, []);
 
     useEffect(() => {
